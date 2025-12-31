@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
+import { Link } from "react-router-dom"
 
 export function Tiers() {
     const tiers = [
@@ -15,7 +16,7 @@ export function Tiers() {
             who: "Learning fundamentals. Learning to ship.",
             mission: [
                 "Follow structured project templates.",
-                "Build portfolio projects from scratch.",
+                "Build projects with guidance.",
                 "Get comfortable with deployment."
             ],
             goal: "Ship your first production-ready project live on the internet.",
@@ -33,8 +34,8 @@ export function Tiers() {
             quote: "I can build anything. Now I need to build something that matters.",
             who: "Ready for the job market. Ready to launch.",
             mission: [
-                "Build MVPs without hand-holding.",
-                "Find co-founders & build teams.",
+                "Build projects without hand-holding.",
+                "Find & build with teams.",
                 "Give back by mentoring Rookies."
             ],
             goal: "Land a Job or Launch a Startup.",
@@ -118,12 +119,14 @@ export function Tiers() {
                                 </div>
 
                                 {/* Button */}
-                                <Button
-                                    className={`w-full rounded-none border-2 ${tier.borderColor} ${tier.bgColor} font-bold uppercase hover:bg-white hover:text-${tier.accent}-600 cursor-pointer transition-all`}
-                                    variant="outline"
-                                >
-                                    {tier.btnText}
-                                </Button>
+                                <Link to="/roadmaps" className="block w-full">
+                                    <Button
+                                        className={`w-full rounded-none border-2 ${tier.borderColor} ${tier.bgColor} font-bold uppercase hover:bg-white hover:text-${tier.accent}-600 cursor-pointer transition-all`}
+                                        variant="outline"
+                                    >
+                                        {tier.btnText}
+                                    </Button>
+                                </Link>
                             </CardContent>
                         </Card>
                     ))}

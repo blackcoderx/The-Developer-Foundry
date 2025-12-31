@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
+import { Link } from "react-router-dom"
 
 export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false)
@@ -24,21 +25,21 @@ export function Navbar() {
             >
                 <div className={`w-full flex items-center justify-between mx-auto ${isScrolled ? "px-6 py-3" : "container max-w-6xl px-4 py-4"}`}>
                     {/* Left: Logo */}
-                    <div className="text-2xl font-black text-primary uppercase tracking-tight font-mono whitespace-nowrap">
+                    <Link to="/" className="text-2xl font-black text-primary uppercase tracking-tight font-mono whitespace-nowrap cursor-pointer hover:text-accent transition-colors">
                         The Developer Foundry
-                    </div>
+                    </Link>
 
                     {/* Right: Links & CTA */}
                     <div className="flex items-center gap-6">
                         <div className="hidden items-center gap-6 md:flex">
-                            <a href="#roadmap" className="font-bold text-primary uppercase hover:text-accent transition-colors">
-                                Roadmap
-                            </a>
+                            <Link to="/roadmaps" className="font-bold text-primary uppercase hover:text-accent transition-colors">
+                                Roadmaps
+                            </Link>
 
                             {/* Vertical Stroke Separator */}
                             <div className="h-6 w-[2px] bg-accent"></div>
 
-                            <a href="#projects" className="font-bold text-primary uppercase hover:text-accent transition-colors">
+                            <a href="/#projects" className="font-bold text-primary uppercase hover:text-accent transition-colors">
                                 Projects
                             </a>
 
