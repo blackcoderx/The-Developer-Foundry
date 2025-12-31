@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@theme {
+    --radius: 0rem;
+
+    --color-border: hsl(var(--border));
+    --color-input: hsl(var(--input));
+    --color-ring: hsl(var(--ring));
+    --color-background: hsl(var(--background));
+    --color-foreground: hsl(var(--foreground));
+
+    --color-primary: hsl(var(--primary));
+    --color-primary-foreground: hsl(var(--primary-foreground));
+
+    --color-secondary: hsl(var(--secondary));
+    --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+    --color-destructive: hsl(var(--destructive));
+    --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+    --color-muted: hsl(var(--muted));
+    --color-muted-foreground: hsl(var(--muted-foreground));
+
+    --color-accent: hsl(var(--accent));
+    --color-accent-foreground: hsl(var(--accent-foreground));
+
+    --color-popover: hsl(var(--popover));
+    --color-popover-foreground: hsl(var(--popover-foreground));
+
+    --color-card: hsl(var(--card));
+    --color-card-foreground: hsl(var(--card-foreground));
+
+    --font-sans: "JetBrains Mono", "monospace";
+    --font-mono: "JetBrains Mono", "monospace";
+}
+
+@layer base {
+    :root {
+        /* User Primary: #f5f5f5 (White Smoke) -> Background */
+        --background: 0 0% 96%;
+        /* ... existing styles ... */
+    }
+
+    /* ... skipped unchanged ... */
+
+    @layer base {
+        * {
+            @apply border-border;
+        }
+
+        body {
+            @apply bg-background text-foreground font-sans;
+            font-family: "JetBrains Mono", monospace;
+        }
+    }
+
+    /* User Secondary: #151414 (Onyx) -> Foreground/Text */
+    --foreground: 0 2% 8%;
+
+    --card: 0 0% 96%;
+    --card-foreground: 0 2% 8%;
+
+    --popover: 0 0% 96%;
+    --popover-foreground: 0 2% 8%;
+
+    /* User Secondary (#151414) used for Primary actions (Buttons) to contrast with Background */
+    --primary: 0 2% 8%;
+    --primary-foreground: 0 0% 96%;
+
+    /* Generated light shade for Secondary background based on Onyx hue */
+    --secondary: 0 2% 90%;
+    --secondary-foreground: 0 2% 8%;
+
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 45%;
+
+    /* User Accent: #FF4000 (Blazing Flame) */
+    --accent: 15 100% 50%;
+    --accent-foreground: 0 0% 96%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 2% 80%;
+    --input: 0 2% 80%;
+    --ring: 15 100% 50%;
+
+    --radius: 0rem;
+}
+
+.dark {
+    /* Inverted for Dark Mode using same palette logic */
+    --background: 0 2% 8%;
+    /* Onyx Background */
+    --foreground: 0 0% 96%;
+    /* White Smoke Text */
+
+    --card: 0 2% 8%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 0 2% 8%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 0 0% 96%;
+    /* White Smoke Buttons */
+    --primary-foreground: 0 2% 8%;
+
+    --secondary: 0 2% 15%;
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 0 2% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 15 100% 50%;
+    --accent-foreground: 0 0% 96%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 96%;
+
+    --border: 0 2% 20%;
+    --input: 0 2% 20%;
+    --ring: 15 100% 50%;
+}
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
