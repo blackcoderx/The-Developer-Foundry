@@ -119,14 +119,7 @@ export function Tiers() {
                                 </div>
 
                                 {/* Button */}
-                                <Link to="/roadmaps" className="block w-full">
-                                    <Button
-                                        className={`w-full rounded-none border-2 ${tier.borderColor} ${tier.bgColor} font-bold uppercase hover:bg-white hover:text-${tier.accent}-600 cursor-pointer transition-all`}
-                                        variant="outline"
-                                    >
-                                        {tier.btnText}
-                                    </Button>
-                                </Link>
+
                             </CardContent>
                         </Card>
                     ))}

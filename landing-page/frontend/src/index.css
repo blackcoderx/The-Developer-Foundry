@@ -38,89 +38,74 @@
     :root {
         /* User Primary: #f5f5f5 (White Smoke) -> Background */
         --background: 0 0% 96%;
-        /* ... existing styles ... */
+
+        /* User Secondary: #151414 (Onyx) -> Foreground/Text */
+        --foreground: 0 2% 8%;
+
+        --card: 0 0% 96%;
+        --card-foreground: 0 2% 8%;
+
+        --popover: 0 0% 96%;
+        --popover-foreground: 0 2% 8%;
+
+        /* User Secondary (#151414) used for Primary actions (Buttons) to contrast with Background */
+        --primary: 0 2% 8%;
+        --primary-foreground: 0 0% 96%;
+
+        /* Generated light shade for Secondary background based on Onyx hue */
+        --secondary: 0 2% 90%;
+        --secondary-foreground: 0 2% 8%;
+
+        --muted: 0 0% 90%;
+        --muted-foreground: 0 0% 45%;
+
+        /* User Accent: #FF4000 (Blazing Flame) */
+        --accent: 15 100% 50%;
+        --accent-foreground: 0 0% 96%;
+
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+
+        --border: 0 2% 80%;
+        --input: 0 2% 80%;
+        --ring: 15 100% 50%;
+
+        --radius: 0rem;
     }
 
-    /* ... skipped unchanged ... */
+    .dark {
+        /* Inverted for Dark Mode using same palette logic */
+        --background: 0 2% 8%;
+        /* Onyx Background */
+        --foreground: 0 0% 96%;
+        /* White Smoke Text */
 
-    @layer base {
-        * {
-            @apply border-border;
-        }
+        --card: 0 2% 8%;
+        --card-foreground: 0 0% 96%;
 
-        body {
-            @apply bg-background text-foreground font-sans;
-            font-family: "JetBrains Mono", monospace;
-        }
+        --popover: 0 2% 8%;
+        --popover-foreground: 0 0% 96%;
+
+        --primary: 0 0% 96%;
+        /* White Smoke Buttons */
+        --primary-foreground: 0 2% 8%;
+
+        --secondary: 0 2% 15%;
+        --secondary-foreground: 0 0% 96%;
+
+        --muted: 0 2% 15%;
+        --muted-foreground: 0 0% 65%;
+
+        --accent: 15 100% 50%;
+        --accent-foreground: 0 0% 96%;
+
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 96%;
+
+        --border: 0 2% 20%;
+        --input: 0 2% 20%;
+        --ring: 15 100% 50%;
     }
-
-    /* User Secondary: #151414 (Onyx) -> Foreground/Text */
-    --foreground: 0 2% 8%;
-
-    --card: 0 0% 96%;
-    --card-foreground: 0 2% 8%;
-
-    --popover: 0 0% 96%;
-    --popover-foreground: 0 2% 8%;
-
-    /* User Secondary (#151414) used for Primary actions (Buttons) to contrast with Background */
-    --primary: 0 2% 8%;
-    --primary-foreground: 0 0% 96%;
-
-    /* Generated light shade for Secondary background based on Onyx hue */
-    --secondary: 0 2% 90%;
-    --secondary-foreground: 0 2% 8%;
-
-    --muted: 0 0% 90%;
-    --muted-foreground: 0 0% 45%;
-
-    /* User Accent: #FF4000 (Blazing Flame) */
-    --accent: 15 100% 50%;
-    --accent-foreground: 0 0% 96%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 2% 80%;
-    --input: 0 2% 80%;
-    --ring: 15 100% 50%;
-
-    --radius: 0rem;
-}
-
-.dark {
-    /* Inverted for Dark Mode using same palette logic */
-    --background: 0 2% 8%;
-    /* Onyx Background */
-    --foreground: 0 0% 96%;
-    /* White Smoke Text */
-
-    --card: 0 2% 8%;
-    --card-foreground: 0 0% 96%;
-
-    --popover: 0 2% 8%;
-    --popover-foreground: 0 0% 96%;
-
-    --primary: 0 0% 96%;
-    /* White Smoke Buttons */
-    --primary-foreground: 0 2% 8%;
-
-    --secondary: 0 2% 15%;
-    --secondary-foreground: 0 0% 96%;
-
-    --muted: 0 2% 15%;
-    --muted-foreground: 0 0% 65%;
-
-    --accent: 15 100% 50%;
-    --accent-foreground: 0 0% 96%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 96%;
-
-    --border: 0 2% 20%;
-    --input: 0 2% 20%;
-    --ring: 15 100% 50%;
-}
 }
 
 @layer base {
@@ -129,6 +114,7 @@
     }
 
     body {
-        @apply bg-background text-foreground;
+        @apply bg-background text-foreground font-sans;
+        font-family: "JetBrains Mono", monospace;
     }
 }

@@ -47,12 +47,14 @@ export function Navbar() {
                             <div className="h-6 w-[2px] bg-accent"></div>
                         </div>
 
-                        <Button
-                            size="lg"
-                            className="rounded-none border-2 border-primary bg-accent text-accent-foreground font-bold uppercase shadow-[2px_2px_0px_0px_var(--color-primary)] hover:translate-y-[2px] hover:translate-x-[2px] hover:shadow-none transition-all active:shadow-none cursor-pointer"
-                        >
-                            Join Us
-                        </Button>
+                        <a href="/#join">
+                            <Button
+                                size="lg"
+                                className="rounded-none border-2 border-primary bg-accent text-accent-foreground font-bold uppercase shadow-[2px_2px_0px_0px_var(--color-primary)] hover:translate-y-[2px] hover:translate-x-[2px] hover:shadow-none transition-all active:shadow-none cursor-pointer"
+                            >
+                                Join Us
+                            </Button>
+                        </a>
                     </div>
                 </div>
             </div>

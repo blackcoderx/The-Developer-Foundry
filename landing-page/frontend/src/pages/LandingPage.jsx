@@ -3,7 +3,7 @@ import { Hero } from "../components/landing/Hero"
 import { Mission } from "../components/landing/Mission"
 import { Tiers } from "../components/landing/Tiers"
 import { Benefits } from "../components/landing/Benefits"
-import { ApplicationForm } from "../components/landing/ApplicationForm"
+import { CTASection } from "../components/landing/CTASection"
 import { Footer } from "../components/landing/Footer"
 
 export function LandingPage() {
@@ -14,7 +14,7 @@ export function LandingPage() {
             <Mission />
             <Tiers />
             <Benefits />
-            <ApplicationForm />
+            <CTASection />
             <Footer />
         </div>
     )
