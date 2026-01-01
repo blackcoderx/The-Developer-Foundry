@@ -1,0 +1,123 @@
+Here is the curated list of **Frontend Projects** for The Foundry.
+
+These projects are designed to kill "tutorialitis." They force you to solve problems that usually appear in mid-level job interviews or actual production tickets.
+
+---
+
+### **Tier 1: Rookie (The Vanilla Survivor)**
+**Theme:** "Mastering the Browser."
+**Hard Constraint:** **NO FRAMEWORKS.** No React, Vue, Svelte. No Libraries like Lodash, Moment.js, or Bootstrap. Pure HTML/CSS/JS only.
+
+#### **1. The "CSS Crime Scene" (Pixel-Perfect Recreation)**
+*   **The Pitch:** I will provide you with a screenshot of a complex webpage (like the Stripe homepage or Airbnb listing). You must recreate it.
+*   **The Twist:** You cannot use `float`, `position: absolute` (unless for overlays), or fixed heights. You must use modern CSS Grid and Flexbox.
+*   **The Challenge:**
+    *   It must be indistinguishable from the image when overlaid at 50% opacity.
+    *   It must be fully responsive (Mobile, Tablet, Desktop) without the layout breaking.
+    *   **Tech:** CSS Grid, Flexbox, Media Queries.
+
+#### **2. The "Time-Zone" Meeting Scheduler**
+*   **The Pitch:** A tool to find a meeting time for people in New York, London, and Tokyo.
+*   **The Twist:** Working with Time and Dates in programming is notoriously difficult. You cannot use a library like `date-fns`.
+*   **The Challenge:**
+    *   User selects a date and time in their local time.
+    *   The app generates a visual slider showing what time that is in 3 other selected time zones.
+    *   Highlight "Overlap Hours" (e.g., 9 AM - 5 PM) where everyone is awake.
+    *   **Tech:** `Date` Object, Math logic, DOM manipulation.
+
+#### **3. The "Infinite" Drum Machine**
+*   **The Pitch:** An interactive grid of buttons that play sounds when clicked or looped.
+*   **The Twist:** The user must be able to record a sequence and play it back.
+*   **The Challenge:**
+    *   Use the HTML5 `<audio>` API (or Web Audio API if you're brave).
+    *   Implement "Keyboard Mapping" (pressing 'A' on keyboard triggers the Kick drum).
+    *   Visual feedback: The button lights up when the sound plays during playback.
+    *   **Tech:** Event Listeners (Click vs Keydown), Audio API, `setInterval` for the loop.
+
+#### **4. The "Local-First" Kanban Board**
+*   **The Pitch:** A Trello clone (To Do, Doing, Done).
+*   **The Twist:** It must persist data, but you have no backend.
+*   **The Challenge:**
+    *   Implement Drag-and-Drop using the native HTML5 Drag and Drop API (no libraries!).
+    *   Save the state of every card and column to `localStorage`.
+    *   On refresh, the board must look exactly how I left it.
+    *   **Tech:** LocalStorage, JSON parsing, Drag/Drop Events.
+
+#### **5. The "GitHub Detective" (Search Interface)**
+*   **The Pitch:** A tool to search GitHub users and analyze their profile strength.
+*   **The Twist:** You have to handle API rate limits and complex error states gracefully.
+*   **The Challenge:**
+    *   Use the `fetch` API to hit the GitHub Public API.
+    *   Display profile info + list of latest 5 repos.
+    *   **Logic:** Calculate a "Foundry Score" based on their public data (e.g., `(Followers * 2) + Public Repos`).
+    *   **Error Handling:** If the user doesn't exist, show a custom illustration/message. If the API limit is hit, show a countdown timer.
+    *   **Tech:** `fetch`, Promises, Async/Await, Error Handling.
+
+#### **6. The "Typewriter" Speed Test**
+*   **The Pitch:** A MonkeyType clone. Test how fast a user can type a paragraph.
+*   **The Twist:** Real-time validation.
+*   **The Challenge:**
+    *   Highlight the current character being typed in Green (correct) or Red (wrong).
+    *   Calculate WPM (Words Per Minute) in real-time as they type.
+    *   Prevent the user from deleting text (Backspace disabled) for "Hard Mode."
+    *   **Tech:** String manipulation, Key events, Performance (don't re-render the whole paragraph on every keystroke).
+
+---
+
+### **Tier 2: Adventurer (The React Architect)**
+**Theme:** "Managing State and Complexity."
+**Hard Constraint:** **React Only.** No UI Kits (MUI/Chakra). You build your own components.
+
+#### **7. The "Tesla" Configurator (Complex State)**
+*   **The Pitch:** A product page where users customize a car.
+*   **The Twist:** Every choice depends on previous choices.
+*   **The Challenge:**
+    *   **Dependencies:** If the user selects "Performance Model," the "19-inch Wheels" option becomes disabled. If they add "Self Driving," the price increases by $10k.
+    *   **Visuals:** The car image must rotate/change based on the selected color/wheels.
+    *   **Summary:** A sticky footer showing the running total price and monthly financing calculation.
+    *   **Tech:** Complex `useState` or `useReducer`, Conditional Rendering.
+
+#### **8. The "Choose Your Own Adventure" Engine (Dynamic Routing)**
+*   **The Pitch:** An interactive story game where choices lead to different URL paths.
+*   **The Twist:** The story structure is not hardcoded in HTML. It is loaded from a JSON file.
+*   **The Challenge:**
+    *   Create a JSON schema that defines "Nodes" (Story text, Image, and Choices leading to other Nodes).
+    *   Use Dynamic Routing (`/story/:nodeId`).
+    *   **History:** Allow the user to go "Back" one step to change their choice without restarting.
+    *   **Tech:** React Router, JSON Data Structure, Prop drilling.
+
+#### **9. The "Infinite" Image Gallery (Performance)**
+*   **The Pitch:** An Unsplash clone.
+*   **The Twist:** You need to load 10,000 images without crashing the browser.
+*   **The Challenge:**
+    *   Implement **Virtualization** (or Windowing). Only render the images currently visible in the viewport.
+    *   Implement **Infinite Scroll**. When the user hits the bottom, fetch the next 20 images.
+    *   **Optimization:** Implement "Blur-up" loading (show a tiny blurry version before the HD one loads).
+    *   **Tech:** `IntersectionObserver` API, `useEffect`, Memoization (`useMemo`).
+
+#### **10. The "Multi-Step" Tax Wizard (Forms)**
+*   **The Pitch:** A TurboTax-style form wizard for collecting user data.
+*   **The Twist:** Validation is strict and context-aware.
+*   **The Challenge:**
+    *   **Step 1:** Personal Info. **Step 2:** Income. **Step 3:** Review.
+    *   **Validation:** You cannot proceed to Step 2 until Step 1 is valid (no empty fields, email format correct).
+    *   **State:** If I go back from Step 2 to Step 1, my data must still be there.
+    *   **Tech:** Controlled Components, Form Validation Logic, State Lifting.
+
+#### **11. The "Crypto Whale" Tracker (Real-Time Data)**
+*   **The Pitch:** A dashboard showing live cryptocurrency prices.
+*   **The Twist:** It must be **Real-Time**. No refreshing the page.
+*   **The Challenge:**
+    *   Connect to a WebSocket API (like Binance or CoinGecko).
+    *   Update the UI numbers live (flash Green if price goes up, Red if down).
+    *   Allow users to "Favorite" a coin, moving it to the top of the list (Client-side sorting).
+    *   **Tech:** WebSockets, `useEffect` cleanup (closing connections), Immutable State updates.
+
+#### **12. The "Restaurant" Seating Chart (Interactive SVG)**
+*   **The Pitch:** An admin tool for a restaurant host to manage tables.
+*   **The Twist:** The UI is a visual map of the floor plan, not a list.
+*   **The Challenge:**
+    *   Render the floor plan using an SVG or Canvas.
+    *   **Interaction:** Clicking a round table toggles it between "Open" (Green), "Occupied" (Red), and "Reserved" (Yellow).
+    *   **Logic:** A table for 2 cannot accept a reservation for a party of 6.
+    *   **Tech:** SVG manipulation, complex Click handlers, Array methods (`.find`, `.map`).

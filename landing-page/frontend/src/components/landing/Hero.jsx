@@ -20,8 +20,8 @@ export function Hero() {
             {/* Sub-Headline */}
             <p className="mx-auto mb-8 max-w-3xl text-lg font-medium text-primary/70 ">
                 Most communities are just chat rooms. We are a training ground.
-                Follow a structured path from <span className="font-bold text-accent">Rookie to Master</span>,
-                build production-grade software (no To-Do lists allowed), and get hired.
+                Follow a structured path from <span className="font-bold text-accent">Rookie to Master</span>.
+                build production-grade software (no To-Do lists allowed).
             </p>
 
             {/* Trust Markers */}

@@ -39,9 +39,9 @@ export function Navbar() {
                             {/* Vertical Stroke Separator */}
                             <div className="h-6 w-[2px] bg-accent"></div>
 
-                            <a href="/#projects" className="font-bold text-primary uppercase hover:text-accent transition-colors">
+                            <Link to="/projects" className="font-bold text-primary uppercase hover:text-accent transition-colors">
                                 Projects
-                            </a>
+                            </Link>
 
                             {/* Vertical Stroke Separator */}
                             <div className="h-6 w-[2px] bg-accent"></div>
