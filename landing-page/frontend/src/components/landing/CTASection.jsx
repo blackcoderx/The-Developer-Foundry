@@ -21,7 +21,7 @@ export function CTASection() {
 
                     <div className="pt-8 flex flex-col md:flex-row items-center justify-center gap-6">
                         <a
-                            href="https://tally.so"
+                            href="https://tally.so/r/QKeej8"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -34,7 +34,7 @@ export function CTASection() {
                         </a>
 
                         <a
-                            href="https://tally.so"
+                            href="https://tally.so/r/Y500Xq"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
